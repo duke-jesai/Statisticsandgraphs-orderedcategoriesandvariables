@@ -1,0 +1,66 @@
+﻿-------------------------------------------------------------------------------------------------------------------
+      name:  <unnamed>
+       log:  C:\Users\Nyatichi\Desktop\Github\Statisticsandgraphs—orderedcategoriesandvariables.log
+  log type:  text
+ opened on:   7 May 2026, 08:56:50
+
+. do "C:\Users\Nyatichi\AppData\Local\Temp\STD2744_000000.tmp"
+
+. use descriptive_gss.dta, clear
+
+. 
+end of do-file
+
+. numlabel _all, add
+
+. do "C:\Users\Nyatichi\AppData\Local\Temp\STD2744_000000.tmp"
+
+. tab1 polviews
+
+-> tabulation of polviews  
+
+       think of self as |
+liberal or conservative |      Freq.     Percent        Cum.
+------------------------+-----------------------------------
+   1. extremely liberal |         47        3.53        3.53
+             2. liberal |        143       10.74       14.27
+    3. slightly liberal |        159       11.95       26.22
+            4. moderate |        522       39.22       65.44
+5. slghtly conservative |        209       15.70       81.14
+        6. conservative |        210       15.78       96.92
+7. extrmly conservative |         41        3.08      100.00
+------------------------+-----------------------------------
+                  Total |      1,331      100.00
+
+. 
+end of do-file
+
+. do "C:\Users\Nyatichi\AppData\Local\Temp\STD2744_000000.tmp"
+
+.  summarize polviews, detail
+
+          think of self as liberal or conservative
+-------------------------------------------------------------
+      Percentiles      Smallest
+ 1%            1              1
+ 5%            2              1
+10%            2              1       Obs               1,331
+25%            3              1       Sum of Wgt.       1,331
+
+50%            4                      Mean           4.124718
+                        Largest       Std. Dev.      1.385016
+75%            5              7
+90%            6              7       Variance       1.918268
+95%            6              7       Skewness      -.1509408
+99%            7              7       Kurtosis       2.693351
+
+. 
+end of do-file
+
+. log close
+      name:  <unnamed>
+       log:  C:\Users\Nyatichi\Desktop\Github\Statisticsandgraphs—orderedcategoriesandvariables.log
+  log type:  text
+ closed on:   7 May 2026, 09:05:07
+
+The frequency distribution produced by tab1 is probably the most useful way to describe the distribution of an ordered categorical variable. We can see that it is fairly symmetrically distributed around the mode of moderate, with somewhat more people describing themselves as conservative rather than liberal. Although the tabulation gives us a good description of the distribution, we often will not have the space in a report to show this level of detail. The median is provided by the summarize command, which shows that the 50th percentile occurs at the value of 4, so the Mdn is 4, corresponding to a political moderate. Even though these are ordinal categories, many researchers would report the mean. The mean assumes that the quantitative values, 1–7, are interval-level measures. However, the mean (M = 4.12) is usually a good measure of central tendency. The mean reflects the distribution somewhat more accurately here than does the median because the mean shows that the average response is a bit more to the conservative end than to the liberal. We know that the mean is a bit more conservative because the higher numeric score on polviews corresponds to more conservative views. You should be able to see this from reading the frequency distribution carefully. Although this variable is clearly ordinal, many researchers treat variables like this as if they were interval and rely on the mean as a measure of central tendency. If you are in doubt, it may be a good idea to report both the median and the mean.
